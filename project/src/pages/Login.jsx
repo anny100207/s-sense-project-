@@ -1,28 +1,32 @@
-// import React, { useContext, useEffect } from 'react'
+import { AuthContext } from "../context/AuthContext";
 import React from "react"
-// import { useLocation, useNavigate } from 'react-router-dom'
-// import { AuthContext } from '../context/AuthContext'
+const [form,setForm] = useState("");
+    const {login} = useContext(AuthContext)
+   
+    const handleForm =(e) =>{
+        const field = e.target;
+        setForm({
+            ...form,
+        [field.name] : field.value
+            
+        })
+    }
+
+    const handleSubmit = (e) =>{   
+        e.preventDefault();
+        login()
+    
+     } 
 
 const Login = () => {
-  // const {login} = useContext(AuthContext)
-  // const navigate = useNavigate();
-  // const location = useLocation()
-
-  // const from = location.state.from.pathname || "";
-  // const handleClick = ()=>{
-  //   login()
-    // navigate(from, {replace:true})
-  // }
-  // useEffect(()=>{
-  //  if(token){
-  //   navigate(from, {replace:true})
-  //  }
-  // },[token])
+      
   return (
     <div style={{margin:"auto",width:"80px"}}>
-      <input type="email" placeholder='Enter Your Emailaddress' /><br />
-      <input type="password" placeholder="Enter Your Password" /><br />
-      <button >Login</button>
+      <form onSubmit={handleSubmit}>
+      <input type="email" placeholder='Enter Your Emailaddress' onChange={handleForm} /><br />
+      <input type="password" placeholder="Enter Your Password"  onChange={handleForm}/><br />
+      <button onClick={()=>handleClick()}>Login</button>
+      </form>
     </div>
   )
   }

@@ -7,8 +7,8 @@ import { AuthContext } from "./AuthContext";
 const RequiredAuth = ( {children}) =>{
     const {token} = useContext(AuthContext);
     const location = useLocation();
-    if (token) return children
-    
+   
+    if (token) return children 
     return <Navigate to="/login" state={{from:location}} replace />
     
 }
