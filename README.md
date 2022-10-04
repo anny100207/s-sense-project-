@@ -11,6 +11,10 @@ Tech Stack Used :- HTML , CSS JAVASCRIPT
 - Redux
 - Chakra UI
 
+##Acknowledgement
+ Original Link :  https://www.ssense.com/en-in
+ Deployed Link : https://beautiful-sfogliatella-52b226.netlify.app
+
 
 ##Pages Built
 
